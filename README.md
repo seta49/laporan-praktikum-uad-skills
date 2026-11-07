@@ -1,4 +1,4 @@
-Kalau males ribet install salin aja link ini terus minta agent mu pasangkan😹
+Kalau males/gk tau cara install, salin aja link ini terus minta agent mu pasangkan😹
 
 # Laporan Praktikum UAD
 
