@@ -1,6 +1,6 @@
 """Bangun laporan praktikum UAD dari template resmi.
 
-Salin skrip ini ke scratch/projek, isi META dan BODY, jalankan dengan interpreter Hermes:
+Salin skrip ini ke scratch/projek, isi META dan BODY, jalankan dengan Python:
   py build_laporan_from_template.py
 
 Alur yang sudah terbukti (jangan disederhanakan tanpa alasan):

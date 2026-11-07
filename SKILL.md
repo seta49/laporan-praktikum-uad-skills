@@ -2,12 +2,8 @@
 name: laporan-praktikum-standar
 description: Gunakan saat menulis atau memformat laporan praktikum UAD. Standar enam aturan (paragraf padat, Ulasan 1 paragraf, tanpa rujukan gambar), lengkap dengan skrip pembangun, template resmi, dan pemeriksa otomatis.
 version: 1.0.0
-author: Hermes Agent
-license: internal
-metadata:
-  hermes:
-    tags: [laporan, praktikum, docx, uad, template, standar]
-    related_skills: [docx-document-building, academic-course-planning]
+author: seta49
+tags: [laporan, praktikum, docx, uad, template, standar]
 ---
 
 # Laporan Praktikum UAD — Standar Baku

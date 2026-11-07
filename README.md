@@ -1,11 +1,8 @@
-# Skill: Laporan Praktikum UAD — Standar Baku
+# Laporan Praktikum UAD — Standar Baku
 
-Skill Hermes untuk membuat laporan praktikum Program Studi Informatika Universitas Ahmad Dahlan
-sesuai **standar enam aturan** yang ditetapkan 4 November 2026 dan sudah diverifikasi pada 12+
-laporan nyata.
+Toolkit Python dan skill AI Agent untuk membuat serta memvalidasi laporan praktikum Program Studi Informatika Universitas Ahmad Dahlan sesuai **standar enam aturan** yang ditetapkan 4 November 2026 dan sudah diverifikasi pada 12+ laporan nyata.
 
-Isinya bukan cuma aturan gaya, tapi lengkap dengan template resmi, skrip pembangun laporan, dan
-pemeriksa otomatis — jadi laporan bisa dibangun dari nol tanpa menyentuh Word sama sekali.
+Paket ini mencakup aturan gaya baku, template dokumen resmi (`.docx`), skrip pembangun dokumen otomatis, dan pemeriksa kualitas (linter parafrase) — sehingga laporan bisa disusun cepat dan rapi baik lewat bantuan AI coding agent maupun dijalankan langsung dari terminal.
 
 Ramah untuk dipakai bersama: tidak ada nama, NIM, atau path pribadi di dalam paket ini.
 
@@ -14,94 +11,51 @@ Ramah untuk dipakai bersama: tidak ada nama, NIM, atau path pribadi di dalam pak
 ## Isi paket
 
 ```
-laporan-praktikum-standar/
-├── SKILL.md                                  aturan standar + pitfall
-├── README.md                                 berkas ini
+skill-laporan-praktikum-uad/
+├── SKILL.md                                  aturan standar & instruksi untuk AI Agent
+├── README.md                                 panduan penggunaan toolkit
 ├── templates/
 │   ├── Template-Laporan-Praktikum-UAD.docx   template resmi (margin 3 cm, Calibri 11)
 │   └── parafrase-brief.md                    brief gaya untuk memparafrase teks
 └── scripts/
     ├── build_laporan_from_template.py        pembangun laporan (.docx)
-    └── verify_revisi_parafrase.py            pemeriksa otomatis
+    └── verify_revisi_parafrase.py            pemeriksa otomatis format & gaya
 ```
 
 ---
 
 ## Kebutuhan
 
-- **Hermes Agent** (CLI atau Desktop), versi apa pun yang mendukung skill.
-- **Python 3.10+** dengan paket `python-docx`.
-- **LibreOffice** — opsional, hanya untuk mengubah `.docx` jadi `.pdf`.
-  Di Windows biasanya sudah ada di `C:\Program Files\LibreOffice\program\soffice.exe`.
-- **uv** — disarankan, supaya tidak perlu bikin virtualenv.
+- **Python 3.10+** dengan pustaka `python-docx`.
+- **uv** (opsional, disarankan supaya tidak perlu repot setup virtualenv).
+- **LibreOffice** (opsional, untuk konversi otomatis `.docx` ke `.pdf`).
+- **AI Agent** (opsional, seperti Antigravity, Cursor, Claude Code, Windsurf, dsb.) jika ingin laporan disusun otomatis oleh agent.
 
 ---
 
 ## Cara pasang
 
-### Cara 1 — salin manual (paling aman, paket lengkap)
+### 1. Digunakan sebagai Skill AI Agent (Antigravity, Cursor, Claude, dll.)
 
-Ini cara yang disarankan karena `scripts/` dan `templates/` ikut tersalin. Kalau hanya memakai
-`hermes skills install`, yang terpasang cuma `SKILL.md` dan skripnya tidak ikut.
+Clone atau salin folder ini ke folder konfigurasi skills agent yang kamu gunakan:
 
-**Windows (PowerShell):**
-
+**Google Antigravity:**
 ```powershell
-Copy-Item -Recurse laporan-praktikum-standar "$env:LOCALAPPDATA\hermes\skills\productivity\"
+# Windows (PowerShell)
+Copy-Item -Recurse . "$env:USERPROFILE\.gemini\config\skills\laporan-praktikum-standar"
 ```
 
-**Windows (cmd):**
+**Project / Workspace Agent (Cursor, Claude Code, dll.):**
+Cukup letakkan folder atau rujuk berkas `SKILL.md` di root repository proyek praktikummu.
 
-```cmd
-xcopy /E /I laporan-praktikum-standar "%LOCALAPPDATA%\hermes\skills\productivity\laporan-praktikum-standar"
-```
+### 2. Digunakan secara Mandiri (Manual Python)
 
-**Linux / macOS:**
+Cukup clone repo ini ke komputer lokal:
 
 ```bash
-cp -r laporan-praktikum-standar ~/.local/share/hermes/skills/productivity/
+git clone https://github.com/seta49/skill-laporan-praktikum-uad.git
+cd skill-laporan-praktikum-uad
 ```
-
-> Kalau folder `skills/productivity/` belum ada, buat dulu:
-> `mkdir -p "$LOCALAPPDATA/hermes/skills/productivity"` (Windows) atau
-> `mkdir -p ~/.local/share/hermes/skills/productivity` (Linux/macOS).
-
-### Cara 2 — lewat perintah Hermes
-
-Kalau folder ini sudah di-hosting dan ada URL langsung menuju `SKILL.md` (misalnya raw GitHub):
-
-```bash
-hermes skills install https://contoh.com/laporan-praktikum-standar/SKILL.md --category productivity
-```
-
-Tambahkan `--yes` kalau dijalankan dari mode TUI supaya tidak berhenti menunggu konfirmasi.
-
-### Cara 3 — publikasi ke GitHub (untuk yang mau membagikan)
-
-```bash
-hermes skills publish ./laporan-praktikum-standar --to github --repo <username>/<nama-repo>
-```
-
----
-
-## Cek sudah terpasang atau belum
-
-```bash
-hermes skills list | grep laporan
-```
-
-Harusnya muncul baris dengan `Name: laporan-praktikum-standar`, `Category: productivity`,
-`Source: local`, dan `Status: enabled`.
-
-| Name | Category | Source | Trust | Status |
-|---|---|---|---|---|
-| laporan-praktikum-standar | productivity | local | local | enabled |
-
-Kalau tidak muncul, cek dua hal: (1) folder skill berada tepat di bawah folder kategori, bukan
-folder kategori lagi; (2) `SKILL.md` dimulai dengan `---` pada baris pertama, bukan teks lain.
-
-Catatan: `hermes skills inspect` hanya membaca katalog resmi, bukan skill local — pesan
-`No skill named ... found in any source` di situ bukan tanda paketnya salah.
 
 ---
 
