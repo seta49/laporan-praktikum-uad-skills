@@ -1,3 +1,5 @@
+Kalau males ribet install salin aja link ini terus minta agent mu pasangkan😹
+
 # Laporan Praktikum UAD
 
 Toolkit Python dan skill AI Agent untuk membuat serta memvalidasi laporan praktikum Program Studi Informatika Universitas Ahmad Dahlan sesuai **standar enam aturan** yang ditetapkan 4 November 2026 dan sudah diverifikasi pada 12+ laporan nyata.
