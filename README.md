@@ -1,103 +1,123 @@
-Kalau males/gk tau cara install, salin aja link ini terus minta agent mu pasangkan😹
+<div align="center">
 
-# Laporan Praktikum UAD
+# 📄 Laporan Praktikum UAD — Standar Baku
 
-Toolkit Python dan skill AI Agent untuk membuat serta memvalidasi laporan praktikum Program Studi Informatika Universitas Ahmad Dahlan sesuai standar baku enam aturan. Aturan lengkap gaya penulisan dapat dibaca di [`SKILL.md`](SKILL.md).
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Output](https://img.shields.io/badge/Output-.DOCX%20%26%20.PDF-2B579A?style=flat-square&logo=microsoftword&logoColor=white)](templates/Template-Laporan-Praktikum-UAD.docx)
+[![Standard](https://img.shields.io/badge/Standard-Informatika%20UAD-003366?style=flat-square)](SKILL.md)
+[![Agent Ready](https://img.shields.io/badge/AI%20Agent-Antigravity%20%7C%20Claude%20%7C%20GPT-8A2BE2?style=flat-square)](#-cara-pasang)
 
----
+<p align="center">
+  Toolkit Python dan skill AI Agent untuk membuat serta memvalidasi laporan praktikum Program Studi Informatika <b>Universitas Ahmad Dahlan</b> sesuai standar baku enam aturan.
+</p>
 
-## Cara pasang
+<p align="center">
+  <a href="#-cara-pasang"><b>📦 Cara Pasang</b></a> •
+  <a href="#-bagian-yang-perlu-diubah"><b>⚙️ Konfigurasi</b></a> •
+  <a href="#-cara-menjalankan"><b>🚀 Eksekusi</b></a> •
+  <a href="SKILL.md"><b>📖 Panduan SKILL.md</b></a>
+</p>
 
-### 1. Google Antigravity
+</div>
 
-**Lewat Chat Prompt (Praktis):**
-Salin prompt ini dan kirimkan langsung di chat Antigravity:
-```text
-Tolong pasang skill laporan praktikum UAD dari https://github.com/seta49/skill-laporan-praktikum-uad ke konfigurasi skills saya.
-```
-
-**Lewat Terminal / CMD:**
-```powershell
-# Windows (PowerShell)
-git clone https://github.com/seta49/skill-laporan-praktikum-uad.git "$env:USERPROFILE\.gemini\config\skills\laporan-praktikum-standar"
-```
-```bash
-# Linux / macOS
-git clone https://github.com/seta49/skill-laporan-praktikum-uad.git ~/.gemini/config/skills/laporan-praktikum-standar
-```
+> 💡 **Males ribet pasang manual?**  
+> Salin aja tautan repo ini (`https://github.com/seta49/skill-laporan-praktikum-uad`) lalu minta AI agent pilihanmu buat pasangkan otomatis! 😹
 
 ---
 
-### 2. Claude (Claude Code & Claude Desktop / Web)
+## 📦 Cara Pasang
 
-**Lewat Claude Code (CMD / Terminal):**
-Jalankan Claude Code langsung dari terminal dengan prompt instalasi di folder proyek praktikummu:
-```bash
-claude "Ambil dan pasang skill dari https://github.com/seta49/skill-laporan-praktikum-uad ke .claude/skills/laporan-praktikum-standar"
-```
-Atau clone manual ke folder skills Claude:
-```bash
-git clone https://github.com/seta49/skill-laporan-praktikum-uad.git .claude/skills/laporan-praktikum-standar
-```
+Pilih platform atau AI agent yang kamu gunakan:
 
-**Lewat Claude Desktop / Web:**
-1. Buat **Project** baru di Claude.
-2. Unggah berkas `SKILL.md` dan `templates/Template-Laporan-Praktikum-UAD.docx` ke bagian **Project Knowledge**.
-3. Di obrolan, minta Claude membuat atau memvalidasi laporan mengacu pada standar di knowledge base tersebut.
+### ⚡ Google Antigravity
 
----
-
-### 3. ChatGPT (Web & Custom GPTs)
-
-**Lewat Custom GPT / Project (Direkomendasikan):**
-1. Buka ChatGPT > **Explore GPTs** > **Create** (atau gunakan menu **Projects**).
-2. Unggah berkas `SKILL.md` dan `templates/Template-Laporan-Praktikum-UAD.docx` ke bagian **Knowledge**.
-3. Pada kolom **Instructions**, masukkan:
-   > Gunakan berkas `SKILL.md` sebagai acuan mutlak penulisan laporan praktikum UAD. Selalu terapkan standar enam aturan (paragraf padat, Ulasan 1 paragraf, tanpa penunjuk gambar, bahasa manusiawi, format tetap).
-
-**Lewat Chat Prompt Langsung:**
-Salin prompt singkat ini sebelum memberikan draf atau data praktikum:
-```text
-Posisikan dirimu sebagai asisten penyusun laporan praktikum Informatika UAD. Ikuti standar baku berikut:
-1. Paragraf isi padat (30–55% dari gaya biasa), 1 paragraf = 1 gagasan teknis.
-2. Ulasan Praktikum wajib 1 paragraf, maksimal ~90 kata (pembelajaran + kendala + solusi + temuan).
-3. DILARANG menggunakan kata penunjuk gambar/tabel (seperti 'ditunjukkan pada', 'seperti tampak pada').
-4. Gunakan kalimat aktif dan bahasa manusiawi, hindari basa-basi buku teks.
-5. Nilai teknis, angka, blok kode, dan caption bab.urut tidak boleh diubah saat diparafrase.
-```
-
----
-
-### 4. Harness Lain (Cursor, Windsurf, Roo Code / Cline, Aider, dll.)
-
-**Lewat Prompt Agent di IDE (Cursor Composer, Windsurf Cascade, Roo Code):**
-Ketik prompt berikut di chat agent IDE:
-```text
-Pelajari aturan dan gunakan skill dari https://github.com/seta49/skill-laporan-praktikum-uad untuk menyusun laporan praktikum di project ini.
-```
-
-**Lewat Rules File di Proyek:**
-Clone repositori ini ke folder proyek praktikum:
-```bash
-git clone https://github.com/seta49/skill-laporan-praktikum-uad.git .skills/laporan-praktikum-standar
-```
-Lalu hubungkan ke konfigurasi rules harness yang kamu gunakan:
-- **Cursor**: Buat file `.cursor/rules/laprak.mdc` atau tambahkan ke `.cursorrules`:
+* **Lewat Chat Prompt (Praktis):**  
+  Kirim prompt ini langsung di obrolan Antigravity:
   ```text
-  Ikuti seluruh aturan format dan gaya penulisan di .skills/laporan-praktikum-standar/SKILL.md
+  Tolong pasang skill laporan praktikum UAD dari https://github.com/seta49/skill-laporan-praktikum-uad ke konfigurasi skills saya.
   ```
-- **Windsurf**: Tambahkan instruksi serupa ke `.windsurfrules`.
-- **Roo Code / Cline**: Tambahkan instruksi ke `.clinerules`.
-- **Aider / Generic Agent**: Jalankan agent dengan menyertakan context file:
+
+* **Lewat Terminal / CMD:**
+  ```powershell
+  # Windows (PowerShell)
+  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git "$env:USERPROFILE\.gemini\config\skills\laporan-praktikum-standar"
+  ```
   ```bash
-  aider --read .skills/laporan-praktikum-standar/SKILL.md
+  # Linux / macOS
+  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git ~/.gemini/config/skills/laporan-praktikum-standar
   ```
 
 ---
 
-### 5. Digunakan secara Mandiri (Manual Python)
+### 🟣 Claude (Claude Code & Web)
 
-Cukup clone repo ini ke komputer lokal:
+* **Lewat Claude Code (CMD / Terminal):**  
+  Jalankan Claude Code langsung dari terminal dengan prompt instalasi di folder proyekmu:
+  ```bash
+  claude "Ambil dan pasang skill dari https://github.com/seta49/skill-laporan-praktikum-uad ke .claude/skills/laporan-praktikum-standar"
+  ```
+  Atau clone langsung ke folder skills Claude:
+  ```bash
+  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git .claude/skills/laporan-praktikum-standar
+  ```
+
+* **Lewat Claude Desktop / Web:**
+  1. Buat **Project** baru di Claude.
+  2. Unggah berkas [`SKILL.md`](SKILL.md) dan [`templates/Template-Laporan-Praktikum-UAD.docx`](templates/Template-Laporan-Praktikum-UAD.docx) ke **Project Knowledge**.
+  3. Minta Claude menyusun atau memvalidasi laporan mengacu pada berkas knowledge tersebut.
+
+---
+
+### 🟢 ChatGPT (Web & Custom GPTs)
+
+* **Lewat Custom GPT / Project (Direkomendasikan):**
+  1. Buka ChatGPT > **Explore GPTs** > **Create** (atau menu **Projects**).
+  2. Unggah [`SKILL.md`](SKILL.md) dan [`templates/Template-Laporan-Praktikum-UAD.docx`](templates/Template-Laporan-Praktikum-UAD.docx) ke bagian **Knowledge**.
+  3. Masukkan arahan singkat di **Instructions**:
+     > Gunakan berkas `SKILL.md` sebagai acuan mutlak penulisan laporan praktikum UAD. Selalu terapkan standar enam aturan (paragraf padat, Ulasan 1 paragraf, tanpa penunjuk gambar, bahasa manusiawi, format tetap).
+
+* **Lewat Chat Prompt Langsung:**  
+  Salin prompt ini di awal obrolan sebelum memberikan draf atau data praktikum:
+  ```text
+  Posisikan dirimu sebagai asisten penyusun laporan praktikum Informatika UAD. Ikuti standar baku berikut:
+  1. Paragraf isi padat (30–55% dari gaya biasa), 1 paragraf = 1 gagasan teknis.
+  2. Ulasan Praktikum wajib 1 paragraf, maksimal ~90 kata (pembelajaran + kendala + solusi + temuan).
+  3. DILARANG menggunakan kata penunjuk gambar/tabel (seperti 'ditunjukkan pada', 'seperti tampak pada').
+  4. Gunakan kalimat aktif dan bahasa manusiawi, hindari basa-basi buku teks.
+  5. Nilai teknis, angka, blok kode, dan caption bab.urut tidak boleh diubah saat diparafrase.
+  ```
+
+---
+
+### 🛠️ Harness Lain (Cursor, Windsurf, Roo Code / Cline, Aider)
+
+* **Lewat Prompt Agent di IDE (Cursor Composer, Windsurf Cascade, Roo Code):**
+  ```text
+  Pelajari aturan dan gunakan skill dari https://github.com/seta49/skill-laporan-praktikum-uad untuk menyusun laporan praktikum di project ini.
+  ```
+
+* **Lewat File Rules Proyek:**  
+  Clone repositori ini ke folder proyek praktikum:
+  ```bash
+  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git .skills/laporan-praktikum-standar
+  ```
+  Lalu tautkan ke konfigurasi rule masing-masing harness:
+  * **Cursor**: Tulis di `.cursor/rules/laprak.mdc` atau `.cursorrules`:
+    ```text
+    Ikuti seluruh aturan format dan gaya penulisan di .skills/laporan-praktikum-standar/SKILL.md
+    ```
+  * **Windsurf**: Tambahkan instruksi ke `.windsurfrules`.
+  * **Roo Code / Cline**: Tambahkan instruksi ke `.clinerules`.
+  * **Aider / CLI Agent**: Sertakan saat menjalankan agent:
+    ```bash
+    aider --read .skills/laporan-praktikum-standar/SKILL.md
+    ```
+
+---
+
+### 💻 Penggunaan Mandiri (Python CLI)
+
+Jika ingin menjalankan tanpa AI Agent, clone langsung ke komputermu:
 
 ```bash
 git clone https://github.com/seta49/skill-laporan-praktikum-uad.git
@@ -106,11 +126,11 @@ cd skill-laporan-praktikum-uad
 
 ---
 
-## Bagian yang Perlu Diubah
+## ⚙️ Bagian yang Perlu Diubah
 
-Buka berkas `scripts/build_laporan_from_template.py`, lalu sesuaikan dua bagian ini:
+Kamu hanya perlu menyunting berkas [`scripts/build_laporan_from_template.py`](scripts/build_laporan_from_template.py) pada dua variabel utama:
 
-### 1. `META` (Identitas & Mata Kuliah)
+### 1. `META` — Identitas & Informasi Praktikum
 
 ```python
 META = {
@@ -123,7 +143,7 @@ META = {
 }
 ```
 
-### 2. `BODY` (Konten Laporan)
+### 2. `BODY` — Struktur Isi Laporan
 
 ```python
 BODY = [
@@ -137,12 +157,24 @@ BODY = [
 ]
 ```
 
-### Menjalankan Skrip
+---
 
-Setelah `META` dan `BODY` diisi, jalankan skrip pembangun dokumen:
+## 🚀 Cara Menjalankan
+
+Setelah `META` dan `BODY` disesuaikan, bangun berkas laporan (`.docx`) menggunakan:
 
 ```bash
+# Menggunakan uv (direkomendasikan, otomatis unduh pustaka)
 uv run --with python-docx python scripts/build_laporan_from_template.py
+
+# Atau menggunakan Python biasa (jika python-docx sudah terpasang)
+python scripts/build_laporan_from_template.py
 ```
 
-*(Atau jalankan `python scripts/build_laporan_from_template.py` jika lingkungan Python lokalmu sudah terpasang `python-docx`).*
+Dokumen keluaran akan otomatis tersimpan di folder tujuan (default: `~/Laporan Praktikum/`).
+
+---
+
+<div align="center">
+  <sub>Aturan penulisan lengkap, struktur blok dokumen, dan panduan parafrase tersedia di <a href="SKILL.md">SKILL.md</a>.</sub>
+</div>
