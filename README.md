@@ -1,10 +1,11 @@
 <div align="center">
 
-# 📄 Laporan Praktikum UAD
+# 📄 Laporan Praktikum UAD Skills
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Output](https://img.shields.io/badge/Output-.DOCX%20%26%20.PDF-2B579A?style=flat-square&logo=microsoftword&logoColor=white)](templates/Template-Laporan-Praktikum-UAD.docx)
 [![Informatika UAD](https://img.shields.io/badge/Format-Informatika%20UAD-003366?style=flat-square)](SKILL.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![AI Ready](https://img.shields.io/badge/AI%20Agent-Antigravity%20%7C%20Claude%20%7C%20ChatGPT-8A2BE2?style=flat-square)](#-cara-pasang)
 
 <p align="center">
@@ -21,7 +22,7 @@
 </div>
 
 > 💡 **Males ribet pasang manual?**  
-> Salin link repo ini (`https://github.com/seta49/skill-laporan-praktikum-uad`) terus suruh AI agent kamu yang pasangkan! 😹
+> Salin link repo ini (`https://github.com/seta49/laporan-praktikum-uad-skills`) terus suruh AI agent kamu yang pasangkan! 😹
 
 ---
 
@@ -34,17 +35,17 @@ Pilih AI agent yang lagi kamu pakai:
 * **Lewat Chat Prompt (Paling Gampang):**  
   Tinggal paste prompt ini ke chat Antigravity:
   ```text
-  Tolong pasang skill laporan praktikum UAD dari https://github.com/seta49/skill-laporan-praktikum-uad ke konfigurasi skills saya.
+  Tolong pasang skill laporan praktikum UAD dari https://github.com/seta49/laporan-praktikum-uad-skills ke konfigurasi skills saya.
   ```
 
 * **Lewat Terminal / CMD:**
   ```powershell
   # Windows (PowerShell)
-  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git "$env:USERPROFILE\.gemini\config\skills\laporan-praktikum-standar"
+  git clone https://github.com/seta49/laporan-praktikum-uad-skills.git "$env:USERPROFILE\.gemini\config\skills\laporan-praktikum-standar"
   ```
   ```bash
   # Linux / macOS
-  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git ~/.gemini/config/skills/laporan-praktikum-standar
+  git clone https://github.com/seta49/laporan-praktikum-uad-skills.git ~/.gemini/config/skills/laporan-praktikum-standar
   ```
 
 ---
@@ -54,11 +55,11 @@ Pilih AI agent yang lagi kamu pakai:
 * **Lewat Claude Code (CMD / Terminal):**  
   Buka terminal di folder project kamu, terus jalanin:
   ```bash
-  claude "Ambil dan pasang skill dari https://github.com/seta49/skill-laporan-praktikum-uad ke .claude/skills/laporan-praktikum-standar"
+  claude "Ambil dan pasang skill dari https://github.com/seta49/laporan-praktikum-uad-skills ke .claude/skills/laporan-praktikum-standar"
   ```
   Atau clone manual ke folder skills Claude:
   ```bash
-  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git .claude/skills/laporan-praktikum-standar
+  git clone https://github.com/seta49/laporan-praktikum-uad-skills.git .claude/skills/laporan-praktikum-standar
   ```
 
 * **Lewat Claude Desktop / Web:**
@@ -93,13 +94,13 @@ Pilih AI agent yang lagi kamu pakai:
 
 * **Lewat Prompt Agent di IDE (Cursor Composer, Windsurf, Roo Code):**
   ```text
-  Pelajari aturan dan pakai skill dari https://github.com/seta49/skill-laporan-praktikum-uad buat nyusun laporan praktikum di project ini.
+  Pelajari aturan dan pakai skill dari https://github.com/seta49/laporan-praktikum-uad-skills buat nyusun laporan praktikum di project ini.
   ```
 
 * **Lewat File Rules Project:**  
   Clone repo ini ke dalam folder project praktikum kamu:
   ```bash
-  git clone https://github.com/seta49/skill-laporan-praktikum-uad.git .skills/laporan-praktikum-standar
+  git clone https://github.com/seta49/laporan-praktikum-uad-skills.git .skills/laporan-praktikum-standar
   ```
   Terus arahkan file rules bawaan IDE kamu:
   * **Cursor**: Tulis di `.cursor/rules/laprak.mdc` atau `.cursorrules`:
@@ -120,8 +121,8 @@ Pilih AI agent yang lagi kamu pakai:
 Kalau mau pakai script Python-nya langsung tanpa AI Agent, clone aja reponya:
 
 ```bash
-git clone https://github.com/seta49/skill-laporan-praktikum-uad.git
-cd skill-laporan-praktikum-uad
+git clone https://github.com/seta49/laporan-praktikum-uad-skills.git
+cd laporan-praktikum-uad-skills
 ```
 
 ---
