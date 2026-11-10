@@ -6,16 +6,17 @@
 [![Output](https://img.shields.io/badge/Output-.DOCX%20%26%20.PDF-2B579A?style=flat-square&logo=microsoftword&logoColor=white)](templates/Template-Laporan-Praktikum-UAD.docx)
 [![Informatika UAD](https://img.shields.io/badge/Format-Informatika%20UAD-003366?style=flat-square)](SKILL.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![AI Ready](https://img.shields.io/badge/AI%20Agent-Antigravity%20%7C%20Claude%20%7C%20ChatGPT-8A2BE2?style=flat-square)](#-cara-pasang)
+[![Agentic Workflow](https://img.shields.io/badge/Workflow-Agentic%20%26%20Batch-8A2BE2?style=flat-square)](#-keunggulan)
 
 <p align="center">
-  Toolkit Python dan skill AI Agent buat bikin dan ngecek laporan praktikum Informatika <b>Universitas Ahmad Dahlan</b> biar formatnya langsung rapi tanpa pusing mikirin margin dan layout.
+  Skill <b>Agentic Workflow</b> dan toolkit Python buat bikin, memformat, dan ngecek laporan praktikum Informatika <b>Universitas Ahmad Dahlan</b> secara otomatis — dari bahan mentah langsung jadi <code>.docx</code> & <code>.pdf</code> siap kumpul.
 </p>
 
 <p align="center">
+  <a href="#-keunggulan"><b>✨ Keunggulan</b></a> •
   <a href="#-cara-pasang"><b>📦 Cara Pasang</b></a> •
-  <a href="#-bagian-yang-perlu-diubah"><b>⚙️ Bagian yang Diubah</b></a> •
-  <a href="#-cara-menjalankan"><b>🚀 Cara Jalanin</b></a> •
+  <a href="#-contoh-prompt-agentic"><b>🤖 Cara Pakai di Agent</b></a> •
+  <a href="#-bagian-yang-perlu-diubah-mode-manual"><b>⚙️ Mode Manual</b></a> •
   <a href="SKILL.md"><b>📖 Panduan SKILL.md</b></a>
 </p>
 
@@ -23,6 +24,17 @@
 
 > 💡 **Males ribet pasang manual?**  
 > Salin link repo ini (`https://github.com/seta49/laporan-praktikum-uad-skills`) terus suruh AI agent kamu yang pasangkan! 😹
+
+---
+
+## ✨ Keunggulan
+
+Skill ini dirancang khusus buat jalan di **Agentic Workflow** (seperti Antigravity, Claude Code, Cursor, Windsurf, Roo Code), jadi kamu nggak perlu lagi ngetik laporan dari nol atau ngatur-ngatur layout Word manual:
+
+* 🤖 **Full Otonom (Terima Beres)**: Cukup taruh bahan mentah (file `.ipynb`, kodingan, screenshot, atau soal praktikum) di folder kerja. Agent bakal otomatis baca tiap gambar & kode, nulis pembahasannya, nge-build `.docx` sesuai template resmi prodi, sampai convert ke `.pdf`.
+* ⚡ **Bisa Bikin Banyak Laprak Sekaligus (Batch Processing)**: Punya tugas beberapa pertemuan sekaligus atau mau merombak banyak laprak lama dalam satu waktu? Tinggal perintah sekali, agent bakal nge-spawn subagent / skrip paralel buat ngerjain semuanya sekaligus.
+* 🗣️ **Bahasa Natural & Anti-Kaku**: Sudah tertanam aturan gaya bahasa yang luwes dan manusiawi — bebas kalimat pasif ala terjemahan mesin, bebas basa-basi buku teks, dan tanpa kalimat penunjuk gambar (`ditunjukkan pada Gambar...`).
+* ✅ **Auto-Verification (Linter Bawaan)**: Agent nggak bakal asal klaim selesai sebelum hasil `.docx`-nya lolos pengecekan skrip verifikasi otomatis (`verify_revisi_parafrase.py`).
 
 ---
 
@@ -64,7 +76,7 @@ Pilih AI agent yang lagi kamu pakai:
 
 * **Lewat Claude Desktop / Web:**
   1. Bikin **Project** baru di Claude.
-  2. Upload file [`SKILL.md`](SKILL.md) dan [`templates/Template-Laporan-Praktikum-UAD.docx`](templates/Template-Laporan-Praktikum-UAD.docx) ke **Project Knowledge**.
+  2. Upload file [`SKILL.md`](SKILL.md), [`templates/parafrase-brief.md`](templates/parafrase-brief.md), dan [`templates/Template-Laporan-Praktikum-UAD.docx`](templates/Template-Laporan-Praktikum-UAD.docx) ke **Project Knowledge**.
   3. Pas chat, minta Claude susun atau cek laporan mengacu ke dokumen yang udah di-upload tadi.
 
 ---
@@ -73,19 +85,19 @@ Pilih AI agent yang lagi kamu pakai:
 
 * **Lewat Custom GPT / Project (Biar Nempel Terus):**
   1. Buka ChatGPT > **Explore GPTs** > **Create** (atau menu **Projects**).
-  2. Upload [`SKILL.md`](SKILL.md) dan [`templates/Template-Laporan-Praktikum-UAD.docx`](templates/Template-Laporan-Praktikum-UAD.docx) ke bagian **Knowledge**.
+  2. Upload [`SKILL.md`](SKILL.md), [`templates/parafrase-brief.md`](templates/parafrase-brief.md), dan [`templates/Template-Laporan-Praktikum-UAD.docx`](templates/Template-Laporan-Praktikum-UAD.docx) ke bagian **Knowledge**.
   3. Isi kolom **Instructions** dengan:
-     > Jadikan file SKILL.md sebagai acuan utama penulisan laporan praktikum UAD. Selalu terapkan aturan penulisan yang ada (paragraf padat, Ulasan 1 paragraf, tanpa frasa penunjuk gambar, dan layout rapi).
+     > Jadikan file SKILL.md dan parafrase-brief.md sebagai acuan utama penulisan laporan praktikum UAD. Gunakan bahasa Indonesia aktif yang luwes (bukan gaya terjemahan kaku), paragraf padat, Ulasan 1 paragraf (≤90 kata), dan tanpa frasa penunjuk gambar.
 
 * **Lewat Chat Prompt Langsung:**  
   Copy prompt ini di awal chat sebelum kirim draft atau materi praktikum:
   ```text
   Bantu aku bikin laporan praktikum Informatika UAD. Ikuti aturan ini:
-  1. Paragraf isi padat dan to the point, 1 paragraf = 1 inti bahasan.
-  2. Ulasan Praktikum wajib 1 paragraf, maksimal 90 kata (pembelajaran + kendala + solusi + temuan).
-  3. DILARANG pakai kalimat penunjuk gambar/tabel (contohnya 'ditunjukkan pada', 'seperti tampak pada').
-  4. Pakai kalimat aktif dan bahasa wajar, jangan kaku kayak buku teks.
-  5. Nilai teknis, angka, kode program, dan caption bab.urut jangan diubah pas diparafrase.
+  1. Paragraf isi padat (30–55% dari gaya biasa), 1 paragraf = 1 inti bahasan (apa yang dikerjakan + angka penting + hasil).
+  2. Ulasan Praktikum wajib 1 paragraf, maksimal 90 kata (pembelajaran + kendala + solusi + temuan), tanpa bullet.
+  3. DILARANG pakai kalimat penunjuk gambar/tabel (seperti 'ditunjukkan pada', 'ditampilkan pada', 'seperti tampak pada').
+  4. Pakai kalimat aktif yang mengalir wajar. Hindari kalimat pasif berlapis dan kata sambung kaku ('adapun', 'oleh karena itu', 'dalam hal ini', 'pada praktikum ini dilakukan').
+  5. Nilai teknis, angka, kode program, dan caption bab.urut jangan diubah atau dikarang.
   ```
 
 ---
@@ -105,7 +117,7 @@ Pilih AI agent yang lagi kamu pakai:
   Terus arahkan file rules bawaan IDE kamu:
   * **Cursor**: Tulis di `.cursor/rules/laprak.mdc` atau `.cursorrules`:
     ```text
-    Ikuti seluruh aturan format dan gaya penulisan di .skills/laporan-praktikum-standar/SKILL.md
+    Ikuti seluruh aturan format, gaya bahasa, dan alur verifikasi di .skills/laporan-praktikum-standar/SKILL.md
     ```
   * **Windsurf**: Tambahkan aturan di `.windsurfrules`.
   * **Roo Code / Cline**: Tambahkan aturan di `.clinerules`.
@@ -127,9 +139,30 @@ cd laporan-praktikum-uad-skills
 
 ---
 
-## ⚙️ Bagian yang Perlu Diubah
+## 🤖 Contoh Prompt Agentic
 
-Kamu cuma perlu edit file [`scripts/build_laporan_from_template.py`](scripts/build_laporan_from_template.py) di dua variabel ini:
+Begitu skill ini terpasang di agent kamu, tinggal perintah lewat chat:
+
+**1. Bikin Laporan Baru dari Bahan Mentah:**
+```text
+Buatkan laporan praktikum dari notebook dan screenshot di folder Pertemuan-3 ini sampai jadi docx dan pdf. Nama: Budi Santoso, NIM: 2200018000.
+```
+
+**2. Bikin Banyak Laporan Sekaligus (Batch Processing):**
+```text
+Di folder ini ada bahan Pertemuan 1 sampai Pertemuan 5. Tolong buatkan semua laporan praktikumnya sekaligus secara paralel pakai skill laporan praktikum UAD, lalu verifikasi semuanya.
+```
+
+**3. Padatkan & Rapikan Banyak Laporan Lama:**
+```text
+Tolong parafrase dan padatkan semua file .docx laporan di folder ini biar sesuai standar laporan praktikum UAD, pastikan semuanya lolos cek verify_revisi_parafrase.py.
+```
+
+---
+
+## ⚙️ Bagian yang Perlu Diubah (Mode Manual)
+
+Kalau kamu jalanin script-nya secara manual tanpa bantuan AI Agent, kamu cuma perlu edit file [`scripts/build_laporan_from_template.py`](scripts/build_laporan_from_template.py) di dua variabel ini:
 
 ### 1. `META` — Data Diri & Praktikum
 
@@ -158,11 +191,7 @@ BODY = [
 ]
 ```
 
----
-
-## 🚀 Cara Menjalankan
-
-Kalau `META` dan `BODY` udah diisi, tinggal generate file laporan (`.docx`) pakai perintah ini:
+### Cara Menjalankan Manual
 
 ```bash
 # Pakai uv (otomatis install library yang dibutuhin, anti ribet)
